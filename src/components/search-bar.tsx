@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { DialogProps } from '@radix-ui/react-alert-dialog'
 import { Search, History, WholeWord } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/custom/ui/button'
+import { Button } from '@/components/ui/button'
 import {
     CommandDialog,
     CommandEmpty,
@@ -11,7 +11,7 @@ import {
     CommandInput,
     CommandItem,
     CommandList,
-} from '@/components/custom/ui/command'
+} from '@/components/ui/command'
 import { historialUsuario } from '@/data/historialUsuario'
 import { trabajos } from '@/data/trabajos'
 

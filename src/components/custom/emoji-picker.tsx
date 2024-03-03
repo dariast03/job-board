@@ -2,7 +2,7 @@ import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from '@/components/custom/ui/popover'
+} from '@/components/ui/popover'
 import { SmileIcon } from 'lucide-react'
 import Picker from '@emoji-mart/react'
 import data from '@emoji-mart/data'

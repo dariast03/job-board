@@ -1,10 +1,10 @@
 import { ChatList } from '@/components/custom/chat/chat-list'
-import { Button } from '@/components/custom/ui/button'
+import { Button } from '@/components/ui/button'
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from '@/components/custom/ui/popover'
+} from '@/components/ui/popover'
 import { cn } from '@/lib/utils'
 import { Message } from '@/types/all'
 import { useState } from 'react'

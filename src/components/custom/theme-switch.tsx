@@ -1,6 +1,6 @@
 import { IconMoon, IconSun } from '@tabler/icons-react'
 import { useTheme } from './theme-provider'
-import { Button } from '@/components/custom/ui/button'
+import { Button } from '@/components/ui/button'
 import { useEffect } from 'react'
 
 export default function ThemeSwitch() {
