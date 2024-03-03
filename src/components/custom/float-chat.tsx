@@ -3,6 +3,10 @@ import { Button } from '../ui/button'
 import { cn } from '@/lib/utils'
 import { ChatList } from './chat/chat-list'
 import { Message } from '@/types/all'
+import { MessageCircle } from 'lucide-react'
+import { mensajes } from '@/data/mensajes'
+import { users } from '@/data/users'
+import { useMessagesStore } from '@/store/messages-store'
 
 const FloatChat = () => {
     const [visibleChat, setVisibleChat] = useState(false)
@@ -11,11 +15,7 @@ const FloatChat = () => {
         setVisibleChat(!visibleChat)
     }
 
-    const [messagesState, setMessages] = useState<Message[]>([])
-
-    const sendMessage = (newMessage: Message) => {
-        setMessages([...messagesState, newMessage])
-    }
+    const { addMessage, messages } = useMessagesStore()
 
     return (
         <>
@@ -23,7 +23,7 @@ const FloatChat = () => {
                 className='fixed bottom-5 right-10 grid size-14 place-content-center rounded-full '
                 onClick={toggleChat}
             >
-                CHAT
+                <MessageCircle />
             </Button>
             <div
                 className={cn([
@@ -33,13 +33,9 @@ const FloatChat = () => {
             >
                 <ChatList
                     isMobile
-                    messages={messagesState}
-                    selectedUser={{
-                        avatar: 'null',
-                        id: 5,
-                        name: 'Yamil',
-                    }}
-                    sendMessage={sendMessage}
+                    messages={messages}
+                    selectedUser={users[1]}
+                    sendMessage={addMessage}
                 />
             </div>
         </>

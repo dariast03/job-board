@@ -13,6 +13,7 @@ import {
 } from '@/components/ui/command'
 import { jobs } from '@/data/jobs'
 import { useHistoryUserStore } from '@/store/history-user-store'
+import { IHistorialUsuario } from '@/types/historial-usuario'
 
 export function SearchBar({ ...props }: DialogProps) {
     const router = useNavigate()
@@ -49,6 +50,16 @@ export function SearchBar({ ...props }: DialogProps) {
         command()
     }, [])
 
+    const addNewHistory = (query: string) => {
+        const history: IHistorialUsuario = {
+            id: Date.now(),
+            usuarioId: 1,
+            fecha_hora: new Date(),
+            detalle: query,
+        }
+        add(history)
+    }
+
     const searchList = !search.length
         ? null
         : jobs.map((navItem) => (
@@ -57,7 +68,7 @@ export function SearchBar({ ...props }: DialogProps) {
                   value={navItem.titulo}
                   onSelect={() => {
                       runCommand(() => {
-                          add(navItem.titulo)
+                          addNewHistory(navItem.titulo)
                           setSearch('')
                           router('/')
                       })
@@ -115,10 +126,10 @@ export function SearchBar({ ...props }: DialogProps) {
                             >
                                 {history
                                     .slice(0, search ? 4 : history.length)
-                                    .map((navItem, index) => (
+                                    .map((navItem) => (
                                         <CommandItem
-                                            key={navItem + index}
-                                            value={navItem}
+                                            key={navItem.id}
+                                            value={navItem.detalle}
                                             onSelect={() => {
                                                 runCommand(() => router('/404'))
                                             }}
@@ -126,7 +137,7 @@ export function SearchBar({ ...props }: DialogProps) {
                                         >
                                             <div className='flex'>
                                                 <History className='mr-2 h-4 w-4' />
-                                                {navItem}
+                                                {navItem.detalle}
                                             </div>
 
                                             {/*             <Button
