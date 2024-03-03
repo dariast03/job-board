@@ -1,10 +1,10 @@
 import { cn } from '@/lib/utils'
 import React, { useRef } from 'react'
-import { Avatar, AvatarImage } from '@/components/custom/ui/avatar'
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import ChatBottombar from './chat-bottombar'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Message, UserData } from '@/types/all'
-import { ScrollArea } from '@/components/custom/ui/scroll-area'
+import { ScrollArea } from '@/components/ui/scroll-area'
 
 interface ChatListProps {
     messages?: Message[]

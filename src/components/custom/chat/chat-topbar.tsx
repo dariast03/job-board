@@ -1,8 +1,8 @@
-import { Avatar, AvatarImage } from '@/components/custom/ui/avatar'
+import { Avatar, AvatarImage } from '@/components/ui/avatar'
 import { Info, Phone, Video } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { cn } from '@/lib/utils'
-import { buttonVariants } from '@/components/custom/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { UserData } from '@/types/all'
 
 interface ChatTopbarProps {

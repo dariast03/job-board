@@ -8,16 +8,16 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import React, { useRef, useState } from 'react'
-import { buttonVariants } from '@/components/custom/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Textarea } from '@/components/custom/ui/textarea'
+import { Textarea } from '@/components/ui/textarea'
 import { EmojiPicker } from '../emoji-picker'
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from '@/components/custom/ui/popover'
+} from '@/components/ui/popover'
 import { Message } from '@/types/all'
 
 interface ChatBottombarProps {
