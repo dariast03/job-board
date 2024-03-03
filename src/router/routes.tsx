@@ -10,7 +10,7 @@ const routes = createBrowserRouter([
             const AppShell = await import('../components/layout/main-layout')
             return { Component: AppShell.default }
         },
-        errorElement: <GeneralError />,
+        errorElement: import.meta.env.PROD && <GeneralError />,
         children: [
             {
                 index: true,
