@@ -2,7 +2,7 @@ import JobDisplay from './job-display'
 import { Separator } from '@/components/ui/separator'
 
 type Props = {
-    jobs: JobType[]
+    jobs: ITrabajo[]
 }
 
 const JobList: React.FC<Props> = ({ jobs }) => {

@@ -1,12 +1,11 @@
 import { Badge } from '@/components/ui/badge'
 import { bussines } from '@/data/bussines'
 import { categories } from '@/data/categories'
-import { cn } from '@/lib/utils'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 type Props = {
-    job: JobType
+    job: ITrabajo
 }
 
 const JobDisplay: React.FC<Props> = (props) => {

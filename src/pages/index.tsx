@@ -14,7 +14,7 @@ const Index = () => {
             const jobTitle = job.titulo.toLowerCase()
 
             return historySearch.some((searchTerm) => {
-                const searchTermsArray = searchTerm
+                const searchTermsArray = searchTerm.detalle
                     .toLowerCase()
                     .split(' ')
                     .filter((s) => s.length > 2)

@@ -1,6 +1,7 @@
+import Company from '@/components/custom/company'
 import FloatChat from '@/components/custom/float-chat'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { bussines } from '@/data/bussines'
 import { jobs } from '@/data/jobs'
 import { ScrollRestoration, useParams, Navigate } from 'react-router-dom'
@@ -19,7 +20,7 @@ const DetailJob = () => {
         <div>
             <ScrollRestoration />
 
-            <div className='mx-auto w-full max-w-xl'>
+            <div className='mx-auto w-full max-w-4xl'>
                 <div className='grid gap-4 p-6'>
                     <div className='flex items-center space-x-4'>
                         <img
@@ -44,38 +45,64 @@ const DetailJob = () => {
                             </p>
                         </div>
                     </div>
+
                     <div className='text-base/leading-7 space-y-4'>
                         <p>{job?.descripcion}</p>
                     </div>
+
                     <div className='text-sm/leading-6 space-y-4'>
                         <div>
                             <h3 className='text-lg font-semibold'>
-                                Qualifications
+                                Requerimientos
                             </h3>
                             <ul className='list-inside list-disc'>
-                                <li>5+ years of product design experience</li>
-                                <li>Strong proficiency with Figma</li>
                                 <li>
-                                    Excellent communication and collaboration
-                                    skills
+                                    Lorem ipsum dolor, sit amet consectetur
+                                    adipisicing elit.
+                                </li>
+                                <li>
+                                    Et corrupti impedit harum totam nostrum
+                                    aliquam optiom.
+                                </li>
+                                <li>
+                                    Inatus porro libero, illo quaerat, id, nisi
+                                    rem placeat officia.
                                 </li>
                             </ul>
                         </div>
                         <div>
-                            <h3 className='text-lg font-semibold'>Skills</h3>
+                            <h3 className='text-lg font-semibold'>
+                                Habilidades
+                            </h3>
                             <ul className='list-inside list-disc'>
-                                <li>UI/UX design</li>
-                                <li>Wireframing and prototyping</li>
-                                <li>Design thinking</li>
+                                <li>Lorem ipsum dolor.</li>
+                                <li>Et corrupti impedit.</li>
+                                <li>Inatus porro libero.</li>
                             </ul>
                         </div>
                     </div>
-                    <div className='flex justify-center'>
-                        <Button className='w-full md:w-auto'>
-                            Apply for this job
+
+                    <div className='flex gap-4'>
+                        <Button className='w-full md:w-auto'>Aplicar</Button>
+                        <Button
+                            variant={'outline'}
+                            className='w-full md:w-auto'
+                        >
+                            Guardar
                         </Button>
                     </div>
                 </div>
+
+                <Card>
+                    <CardHeader>
+                        <header className='text-lg font-bold'>
+                            Acerca de la empresa
+                        </header>
+                    </CardHeader>
+                    <CardContent>
+                        <Company company={company} />
+                    </CardContent>
+                </Card>
             </div>
 
             <FloatChat />
