@@ -21,15 +21,13 @@ const routes = createBrowserRouter([
             {
                 path: 'ofertas-de-trabajo',
                 lazy: async () => ({
-                    Component: (await import('../pages/ofertas-de-trabajo'))
-                        .default,
+                    Component: (await import('../pages/jobs')).default,
                 }),
             },
             {
                 path: 'ofertas-de-trabajo/:id',
                 lazy: async () => ({
-                    Component: (await import('../pages/ofertas-de-trabajo/[id]'))
-                        .default,
+                    Component: (await import('../pages/jobs/[id]')).default,
                 }),
             },
         ],
