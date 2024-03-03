@@ -110,7 +110,7 @@ export default function ChatBottombar({
                         >
                             <PlusCircle
                                 size={20}
-                                className='text-muted-foreground'
+                                className='text-white'
                             />
                         </Link>
                     </PopoverTrigger>
@@ -130,7 +130,7 @@ export default function ChatBottombar({
                                 >
                                     <Mic
                                         size={20}
-                                        className='text-muted-foreground'
+                                        className='text-white'
                                     />
                                 </Link>
                                 {BottombarIcons.map((icon, index) => (
@@ -148,7 +148,7 @@ export default function ChatBottombar({
                                     >
                                         <icon.icon
                                             size={20}
-                                            className='text-muted-foreground'
+                                            className='text-white'
                                         />
                                     </Link>
                                 ))}
@@ -167,7 +167,7 @@ export default function ChatBottombar({
                             >
                                 <Mic
                                     size={20}
-                                    className='text-muted-foreground'
+                                    className='text-white'
                                 />
                             </Link>
                         )}
@@ -190,7 +190,7 @@ export default function ChatBottombar({
                             >
                                 <icon.icon
                                     size={20}
-                                    className='text-muted-foreground'
+                                    className='text-white'
                                 />
                             </Link>
                         ))}
@@ -205,6 +205,7 @@ export default function ChatBottombar({
                         inputRef.current.focus()
                     }
                 }}
+                
             />
 
             <AnimatePresence initial={false}>
@@ -247,7 +248,7 @@ export default function ChatBottombar({
                     >
                         <SendHorizontal
                             size={20}
-                            className='text-muted-foreground'
+                            className='text-white'
                         />
                     </Link>
                 ) : (
@@ -260,7 +261,7 @@ export default function ChatBottombar({
                         )}
                         onClick={handleThumbsUp}
                     >
-                        <ThumbsUp size={20} className='text-muted-foreground' />
+                        <ThumbsUp size={20} className='text-white' />
                     </Link>
                 )}
             </AnimatePresence>
