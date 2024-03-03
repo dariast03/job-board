@@ -13,8 +13,9 @@ const MainLayout: React.FC<Props> = (props) => {
             <div className='flex min-h-screen flex-col space-y-6'>
                 <header
                     className={cn([
-                        'relative border-gray-200  px-4 py-2.5 shadow lg:px-6',
-                        withHero && 'h-screen',
+                        'relative  shadow',
+                        withHero && 'h-screen ',
+                        !withHero && 'bg-card',
                     ])}
                 >
                     {withHero && (
