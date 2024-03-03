@@ -12,7 +12,7 @@ type Props = {
 const JobDisplay: React.FC<Props> = (props) => {
     const { job } = props
 
-    const { categoriaId, titulo, descripcion, salario } = job
+    const { id, categoriaId, titulo, descripcion, salario } = job
 
     const categoria = categories.find((c) => c.id == categoriaId)
 
@@ -20,7 +20,7 @@ const JobDisplay: React.FC<Props> = (props) => {
 
     return (
         <Link
-            to={'/ofertas-de-trabajo/2'}
+            to={`/ofertas-de-trabajo/${id}`}
             className='grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-12'
         >
             <div className='col-span-2'>
