@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 
 export default function ThemeSwitch() {
     const [theme, setTheme] = useState('light')
-    //const { theme, setTheme } = useTheme()
 
     const toggleTheme = () => {
         if (theme === 'light') {
@@ -31,11 +30,15 @@ export default function ThemeSwitch() {
         <Button
             size='icon'
             variant='ghost'
-            className='rounded-full'
+            className='rounded-full hover:bg-primary/25'
             //onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             onClick={toggleTheme}
         >
-            {theme === 'light' ? <IconMoon size={20} /> : <IconSun size={20} />}
+            {theme === 'light' ? (
+                <IconMoon size={20} color='#fff' />
+            ) : (
+                <IconSun size={20} />
+            )}
         </Button>
     )
 }
