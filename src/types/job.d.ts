@@ -1,9 +1,11 @@
-type TTrabajo = {
+type JobType = {
     id: number
-    categoria: string
+    categoriaId: number
     salario: number
     fecha_de_publicacion: date
     fecha_de_presentacion: date
-    descripcion_contrato: string
+    titulo: string
+    descripcion: string
     estado: string
+    ubicacion: string
 }

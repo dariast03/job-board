@@ -1,4 +1,4 @@
-export type THistorialUsuario = {
+export type HistoryUserType = {
     id: number
     usuarioId: number
     fecha_hora: Date
