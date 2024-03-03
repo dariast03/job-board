@@ -1,17 +1,41 @@
 import JobList from '@/components/custom/job/job-list'
 import { jobs } from '@/data/jobs'
+import { useHistoryUserStore } from '@/store/history-user-store'
 
 const Index = () => {
-    const lengthJobsFormat = new Intl.NumberFormat('es-Es').format(
-        jobs.length * 1000
-    )
+    const filterJobs = jobs.slice(0, 10)
+
+    const lengthJobsFormat = new Intl.NumberFormat('es-Es').format(jobs.length)
+
+    const { history: historySearch } = useHistoryUserStore()
+
+    const filterJobsByHistory = jobs
+        .filter((job) => {
+            const jobTitle = job.titulo.toLowerCase()
+
+            return historySearch.some((searchTerm) => {
+                const searchTermsArray = searchTerm.toLowerCase().split(' ')
+                return searchTermsArray.some((term) => jobTitle.includes(term))
+            })
+        })
+        .slice(0, 5)
+
     return (
         <>
-            <div className='container max-w-4xl'>
-                <h1 className='my-10 text-center text-3xl font-bold'>
-                    {lengthJobsFormat} Trabajos esperando por ti
-                </h1>
-                <JobList jobs={jobs.slice(0, 10)} />
+            <div className='container max-w-4xl space-y-20'>
+                <section>
+                    <h1 className='my-10 text-center text-3xl font-bold'>
+                        Trabajos relacionados con tu busqueda
+                    </h1>
+                    <JobList jobs={filterJobsByHistory} />
+                </section>
+
+                <section>
+                    <h1 className='my-10 text-center text-3xl font-bold'>
+                        {lengthJobsFormat} Trabajos esperando por ti
+                    </h1>
+                    <JobList jobs={filterJobs} />
+                </section>
             </div>
         </>
     )

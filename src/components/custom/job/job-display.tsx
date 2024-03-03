@@ -3,6 +3,7 @@ import { bussines } from '@/data/bussines'
 import { categories } from '@/data/categories'
 import { cn } from '@/lib/utils'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 type Props = {
     job: JobType
@@ -18,7 +19,10 @@ const JobDisplay: React.FC<Props> = (props) => {
     const company = bussines[Math.floor(Math.random() * bussines.length)]
 
     return (
-        <div className='grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-12'>
+        <Link
+            to={'/ofertas-de-trabajo/2'}
+            className='grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-12'
+        >
             <div className='col-span-2'>
                 <img className='size-10 object-contain' src={company.logo} />
             </div>
@@ -49,7 +53,7 @@ const JobDisplay: React.FC<Props> = (props) => {
                     ${salario - 5000} - ${salario + 5000}
                 </p>
             </div>
-        </div>
+        </Link>
     )
 }
 export default JobDisplay
