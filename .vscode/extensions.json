@@ -1,0 +1,9 @@
+{
+          "recommendations": [
+                    "dbaeumer.vscode-eslint", 
+                    "esbenp.prettier-vscode",
+                    "eamodio.gitlens",
+                    "dsznajder.es7-react-js-snippets",
+                    "skyran.js-jsx-snippets"
+          ]
+}
