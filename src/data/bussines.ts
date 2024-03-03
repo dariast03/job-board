@@ -1,6 +1,6 @@
-import { BussinesType } from "@/types/bussines";
+import { IEmpresa } from '@/types/empresa'
 
-export const bussines: BussinesType[] = [
+export const bussines: IEmpresa[] = [
     {
         id: 1,
         nombre: 'Facebook',
@@ -11,7 +11,7 @@ export const bussines: BussinesType[] = [
         descripcion: 'Empresa de Red Social',
         industria: 'Informatica',
         sector: 'Redes Sociales',
-        ubicacion_secundaria:'Calle Maldonado Plus 121',
+        ubicacion_secundaria: 'Calle Maldonado Plus 121',
     },
     {
         id: 2,
@@ -44,10 +44,11 @@ export const bussines: BussinesType[] = [
         ubicacion: 'Calle Silicon 241',
         nro_de_contacto: '+59125486361',
         correo: 'Apple@business.com',
-        descripcion: 'Empresa encargada del desarrollo de software y equipos de electronica',
+        descripcion:
+            'Empresa encargada del desarrollo de software y equipos de electronica',
         industria: 'Desarrollo de Tecnologia',
         sector: 'Electronica',
-        ubicacion_secundaria: 'Calle Valley 141',   
+        ubicacion_secundaria: 'Calle Valley 141',
     },
     {
         id: 5,
@@ -68,7 +69,8 @@ export const bussines: BussinesType[] = [
         ubicacion: 'Calle Samantha 414',
         nro_de_contacto: '+59125486363',
         correo: 'Samsung@business.com',
-        descripcion: 'Empresa encargada de Producir Dispositivos de Electronica',
+        descripcion:
+            'Empresa encargada de Producir Dispositivos de Electronica',
         industria: 'Desarrollo de Tecnologia',
         sector: 'Electronica',
         ubicacion_secundaria: 'Avenida Sun-gheong 313',
@@ -80,7 +82,8 @@ export const bussines: BussinesType[] = [
         ubicacion: 'Calle Avellanedo 2424',
         nro_de_contacto: '+59125486364',
         correo: 'Xiaomi@business.com',
-        descripcion: 'Empresa encargada de Producir Dispositivos de Electronica',
+        descripcion:
+            'Empresa encargada de Producir Dispositivos de Electronica',
         industria: 'Desarrollo de Tecnologia',
         sector: 'Electronica',
         ubicacion_secundaria: 'Avenida Paris 145',
@@ -92,7 +95,8 @@ export const bussines: BussinesType[] = [
         ubicacion: 'Calle Final 567',
         nro_de_contacto: '+59125486365',
         correo: 'Sony@business.com',
-        descripcion: 'Empresa encargada de Producir Dispositivos de Electronica',
+        descripcion:
+            'Empresa encargada de Producir Dispositivos de Electronica',
         industria: 'Desarrollo de Tecnologia',
         sector: 'Electronica',
         ubicacion_secundaria: 'Calle Inicial 561',

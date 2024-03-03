@@ -1,4 +1,8 @@
-export const categories = [
+import { ICategoriaTrabajo } from '@/types/categoria-trabajo'
+
+type Categories = ICategoriaTrabajo & { color: string }
+
+export const categories: Categories[] = [
     {
         id: 1,
         nombre: 'Desarrollo de Software',

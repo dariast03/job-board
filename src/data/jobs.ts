@@ -1,4 +1,4 @@
-export const jobs: JobType[] = [
+export const jobs: ITrabajo[] = [
     {
         id: 1,
         categoriaId: 1,

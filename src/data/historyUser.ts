@@ -1,6 +1,6 @@
-import { HistoryUserType } from '@/types/history-user'
+import { IHistorialUsuario } from '@/types/historial-usuario'
 
-export const historialUsuario: HistoryUserType[] = [
+export const historialUsuario: IHistorialUsuario[] = [
     {
         id: 1,
         usuarioId: 101,
