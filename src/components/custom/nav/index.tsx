@@ -12,7 +12,10 @@ type Props = {
 const Nav: React.FC<Props> = (props) => {
     const { withHero } = props
     return (
-        <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between'>
+        <div
+            className='mx-auto flex max-w-7xl   flex-wrap items-center justify-between  px-4 py-2.5
+        lg:px-6'
+        >
             <NavHeader />
 
             <NavLinks withHero={withHero} />
