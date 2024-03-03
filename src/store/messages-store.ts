@@ -4,29 +4,30 @@ import { StateCreator, create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 
 type Store = {
-    history: IHistorialUsuario[]
+    messages: IMensaje[]
 }
 
 type Actions = {
-    add: (query: IHistorialUsuario) => void
-    clear: () => void
+    addMessage: (message: IMensaje) => void
+    clearMessages: () => void
 }
 
-type HistoryUserStore = Store & Actions
+type MessagesStore = Store & Actions
 
 const initialState: Store = {
-    history: [],
+    messages: [],
 }
 
 const storeData: StateCreator<Store & Actions> = (set) => ({
     ...initialState,
-    add: (value) => set((state) => ({ history: [value, ...state.history] })),
-    clear: () => set(() => ({ history: [] })),
+    addMessage: (message) =>
+        set((state) => ({ messages: [...state.messages, message] })),
+    clearMessages: () => set(() => ({ messages: [] })),
 })
 
-export const useHistoryUserStore = create<HistoryUserStore>()(
+export const useMessagesStore = create<MessagesStore>()(
     persist(storeData, {
-        name: 'history-user-store',
+        name: 'messages-store',
         storage: createJSONStorage(() => localStorage),
     })
 )
