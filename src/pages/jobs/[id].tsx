@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { bussines } from '@/data/bussines'
 import { jobs } from '@/data/jobs'
+import { useMemo } from 'react'
 import { ScrollRestoration, useParams, Navigate } from 'react-router-dom'
 
 type Params = { id: string }
@@ -12,7 +13,11 @@ const DetailJob = () => {
     const params = useParams<Params>()
 
     const job = jobs.find((j) => j.id == Number(params.id))
-    const company = bussines[Math.floor(Math.random() * bussines.length)]
+    
+    const company = useMemo(
+        () => bussines[Math.floor(Math.random() * bussines.length)],
+        [params.id]
+    )
 
     if (!job) return <Navigate to='/404' />
 
