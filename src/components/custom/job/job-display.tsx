@@ -36,9 +36,13 @@ const JobDisplay: React.FC<Props> = (props) => {
                 </Badge>
 
                 <div>
-                    <h2 className='font-bold text-primary'>{titulo}</h2>
+                    <h2 className='font-bold text-primary dark:text-gray-300'>
+                        {titulo}
+                    </h2>
 
-                    <p className='text-gray-500'>{descripcion}</p>
+                    <p className='text-gray-500 dark:text-gray-400'>
+                        {descripcion}
+                    </p>
                 </div>
             </div>
 
