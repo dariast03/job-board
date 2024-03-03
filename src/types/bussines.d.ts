@@ -8,4 +8,5 @@ export type BussinesType = {
     industria: string
     sector: string
     ubicacion_secundaria: string
+    logo: string
 }
