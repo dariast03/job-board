@@ -1,12 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { DialogProps } from '@radix-ui/react-alert-dialog'
-import { Search, History, X } from 'lucide-react'
+import { Search, History, Trash } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
     CommandDialog,
-    CommandEmpty,
     CommandGroup,
     CommandInput,
     CommandItem,
@@ -21,7 +20,7 @@ export function SearchBar({ ...props }: DialogProps) {
 
     const [search, setSearch] = useState('')
 
-    const { history, add } = useHistoryUserStore()
+    const { history, add, clear } = useHistoryUserStore()
 
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
@@ -99,33 +98,48 @@ export function SearchBar({ ...props }: DialogProps) {
                     {/*        <CommandEmpty>No results found.</CommandEmpty> */}
 
                     {!!history.length && (
-                        <CommandGroup heading='Historial'>
-                            {history
-                                .slice(0, search ? 4 : history.length)
-                                .map((navItem, index) => (
-                                    <CommandItem
-                                        key={navItem + index}
-                                        value={navItem}
-                                        onSelect={() => {
-                                            runCommand(() => router('/404'))
-                                        }}
-                                        /*    className='flex  justify-between' */
-                                    >
-                                        <div className='flex'>
-                                            <History className='mr-2 h-4 w-4' />
-                                            {navItem}
-                                        </div>
+                        <>
+                            <CommandGroup
+                                heading={
+                                    <div className='flex justify-between'>
+                                        <p>Historial</p>
+                                        <button
+                                            className='flex items-center gap-1'
+                                            onClick={clear}
+                                        >
+                                            <Trash size={15} /> Borrar Historial
+                                        </button>
+                                    </div>
+                                }
+                                className='m-0 p-0'
+                            >
+                                {history
+                                    .slice(0, search ? 4 : history.length)
+                                    .map((navItem, index) => (
+                                        <CommandItem
+                                            key={navItem + index}
+                                            value={navItem}
+                                            onSelect={() => {
+                                                runCommand(() => router('/404'))
+                                            }}
+                                            /*    className='flex  justify-between' */
+                                        >
+                                            <div className='flex'>
+                                                <History className='mr-2 h-4 w-4' />
+                                                {navItem}
+                                            </div>
 
-                                        {/*             <Button
+                                            {/*             <Button
                                             variant={'ghost'}
                                             type='button'
                                             onClick={(e) => e.preventDefault()}
                                         >
                                             <X className='text-gray-400' />
                                         </Button> */}
-                                    </CommandItem>
-                                ))}
-                        </CommandGroup>
+                                        </CommandItem>
+                                    ))}
+                            </CommandGroup>
+                        </>
                     )}
 
                     {!!search.length && (

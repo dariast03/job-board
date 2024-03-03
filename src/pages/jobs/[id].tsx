@@ -1,9 +1,10 @@
 import FloatChat from '@/components/custom/float-chat'
-import { Link } from 'react-router-dom'
+import { Link, ScrollRestoration } from 'react-router-dom'
 
 const DetalleOfertaDeTrabajo = () => {
     return (
         <div>
+            <ScrollRestoration />
             <>
                 <div className='bg-primary py-6 lg:py-12'>
                     <div className='container px-4 md:px-6'>

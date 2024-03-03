@@ -14,7 +14,11 @@ const Index = () => {
             const jobTitle = job.titulo.toLowerCase()
 
             return historySearch.some((searchTerm) => {
-                const searchTermsArray = searchTerm.toLowerCase().split(' ')
+                const searchTermsArray = searchTerm
+                    .toLowerCase()
+                    .split(' ')
+                    .filter((s) => s.length > 2)
+
                 return searchTermsArray.some((term) => jobTitle.includes(term))
             })
         })
@@ -22,13 +26,15 @@ const Index = () => {
 
     return (
         <>
-            <div className='container max-w-4xl space-y-20'>
-                <section>
-                    <h1 className='my-10 text-center text-3xl font-bold'>
-                        Trabajos relacionados con tu busqueda
-                    </h1>
-                    <JobList jobs={filterJobsByHistory} />
-                </section>
+            <div className='space-y-20 md:container md:max-w-4xl'>
+                {!!filterJobsByHistory.length && (
+                    <section>
+                        <h1 className='my-10 text-center text-3xl font-bold'>
+                            Trabajos relacionados con tu busqueda
+                        </h1>
+                        <JobList jobs={filterJobsByHistory} />
+                    </section>
+                )}
 
                 <section>
                     <h1 className='my-10 text-center text-3xl font-bold'>

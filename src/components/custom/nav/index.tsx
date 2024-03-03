@@ -1,15 +1,38 @@
-import { SearchBar } from '@/components/search-bar'
-import { NavLinks } from './nav-links'
+import { SearchBar } from '@/components/custom/search-bar'
+import { NavLinks } from './links-nav'
 import ThemeSwitch from '../theme-switch'
-import { UserNav } from '@/components/layout/user-nav'
-import NavHeader from './nav-header'
+import { UserNav } from './user-nav'
+import NavHeader from './header-nav'
+import React from 'react'
 
-const Nav = () => {
+type Props = {
+    withHero?: boolean
+}
+
+const Nav: React.FC<Props> = (props) => {
+    const { withHero } = props
     return (
         <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between'>
             <NavHeader />
 
-            {/*    <div className='flex items-center '>
+            <NavLinks withHero={withHero} />
+
+            <div className='flex gap-4'>
+                <SearchBar />
+
+                <UserNav />
+
+                <ThemeSwitch />
+            </div>
+        </div>
+    )
+}
+export default Nav
+
+//TODO: ADD MOBILE MENU
+/* 
+// MOBILE MENU
+ {/*    <div className='flex items-center '>
     <button
         data-collapse-toggle='mobile-menu-2'
         type='button'
@@ -43,18 +66,5 @@ const Nav = () => {
             />
         </svg>
     </button>
-</div> */}
-
-            <NavLinks />
-
-            <div className='flex gap-4'>
-                <SearchBar />
-
-                <UserNav />
-
-                <ThemeSwitch />
-            </div>
-        </div>
-    )
-}
-export default Nav
+</div> 
+*/
