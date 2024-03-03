@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom'
 
 import { cn } from '@/lib/utils'
 
-export function MainNav({
+export const NavLinks = ({
     className,
     ...props
-}: React.HTMLAttributes<HTMLElement>) {
+}: React.HTMLAttributes<HTMLElement>) => {
     return (
         <nav
             className={cn(

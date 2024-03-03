@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { DialogProps } from '@radix-ui/react-alert-dialog'
-import { Search, History, WholeWord } from 'lucide-react'
+import { Search, History, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
@@ -12,14 +12,16 @@ import {
     CommandItem,
     CommandList,
 } from '@/components/ui/command'
-import { historialUsuario } from '@/data/historyUser'
 import { jobs } from '@/data/jobs'
+import { useHistoryUserStore } from '@/store/history-user-store'
 
 export function SearchBar({ ...props }: DialogProps) {
     const router = useNavigate()
     const [open, setOpen] = useState(false)
 
     const [search, setSearch] = useState('')
+
+    const { history, add } = useHistoryUserStore()
 
     useEffect(() => {
         const down = (e: KeyboardEvent) => {
@@ -48,6 +50,25 @@ export function SearchBar({ ...props }: DialogProps) {
         command()
     }, [])
 
+    const searchList = !search.length
+        ? null
+        : jobs.map((navItem) => (
+              <CommandItem
+                  key={navItem.id}
+                  value={navItem.titulo}
+                  onSelect={() => {
+                      runCommand(() => {
+                          add(navItem.titulo)
+                          setSearch('')
+                          router('/')
+                      })
+                  }}
+              >
+                  <Search className='mr-2 h-4 w-4' />
+                  {navItem.titulo}
+              </CommandItem>
+          ))
+
     return (
         <>
             <Button
@@ -75,81 +96,53 @@ export function SearchBar({ ...props }: DialogProps) {
                     onValueChange={(x) => setSearch(x)}
                 />
                 <CommandList>
-                    <CommandEmpty>No results found.</CommandEmpty>
+                    {/*        <CommandEmpty>No results found.</CommandEmpty> */}
 
-                    <CommandGroup heading='Historial'>
-                        {historialUsuario
-                            .slice(0, search ? 4 : historialUsuario.length)
-                            .map((navItem) => (
-                                <CommandItem
-                                    key={navItem.id}
-                                    value={navItem.detalle}
-                                    onSelect={() => {
-                                        runCommand(() => router('/404'))
-                                    }}
-                                >
-                                    <History className='mr-2 h-4 w-4' />
-                                    {navItem.detalle}
-                                </CommandItem>
-                            ))}
-                    </CommandGroup>
+                    {!!history.length && (
+                        <CommandGroup heading='Historial'>
+                            {history
+                                .slice(0, search ? 4 : history.length)
+                                .map((navItem, index) => (
+                                    <CommandItem
+                                        key={navItem + index}
+                                        value={navItem}
+                                        onSelect={() => {
+                                            runCommand(() => router('/404'))
+                                        }}
+                                        /*    className='flex  justify-between' */
+                                    >
+                                        <div className='flex'>
+                                            <History className='mr-2 h-4 w-4' />
+                                            {navItem}
+                                        </div>
 
-                    <CommandGroup heading='Busqueda'>
-                        {jobs.map((navItem) => (
-                            <CommandItem
-                                key={navItem.id}
-                                value={navItem.titulo}
-                                onSelect={() => {
-                                    runCommand(() => router('/404'))
-                                }}
-                            >
-                                <Search className='mr-2 h-4 w-4' />
-                                {navItem.titulo}
-                            </CommandItem>
-                        ))}
-                    </CommandGroup>
-                    {/*   
-          {docsConfig.sidebarNav.map((group) => (
-            <CommandGroup key={group.title} heading={group.title}>
-              {group.items.map((navItem) => (
-                <CommandItem
-                  key={navItem.href}
-                  value={navItem.title}
-                  onSelect={() => {
-                    runCommand(() => router.push(navItem.href as string))
-                  }}
-                >
-                  <div className="mr-2 flex h-4 w-4 items-center justify-center">
-                    <CircleIcon className="h-3 w-3" />
-                  </div>
-                  {navItem.title}
-                </CommandItem>
-              ))}
-            </CommandGroup>
-          ))} */}
-                    {/*     <CommandSeparator />
-                    <CommandGroup heading='Theme'>
-                        <CommandItem
-                            onSelect={() => runCommand(() => setTheme('light'))}
-                        >
-                            <SunIcon className='mr-2 h-4 w-4' />
-                            Light
-                        </CommandItem>
-                        <CommandItem
-                            onSelect={() => runCommand(() => setTheme('dark'))}
-                        >
-                            <MoonIcon className='mr-2 h-4 w-4' />
-                            Dark
-                        </CommandItem>
-                        <CommandItem
-                            onSelect={() =>
-                                runCommand(() => setTheme('system'))
-                            }
-                        >
-                            <LaptopIcon className='mr-2 h-4 w-4' />
-                            System
-                        </CommandItem>
-                    </CommandGroup> */}
+                                        {/*             <Button
+                                            variant={'ghost'}
+                                            type='button'
+                                            onClick={(e) => e.preventDefault()}
+                                        >
+                                            <X className='text-gray-400' />
+                                        </Button> */}
+                                    </CommandItem>
+                                ))}
+                        </CommandGroup>
+                    )}
+
+                    {!!search.length && (
+                        <CommandGroup heading={'Busqueda'}>
+                            {searchList}
+                        </CommandGroup>
+                    )}
+
+                    {!search.length && !history.length && (
+                        <div className='p-10'>
+                            <Search className='mx-auto' size={60} />
+
+                            <p className='text-center text-xs'>
+                                Empieza a buscar ofertas de trabajo
+                            </p>
+                        </div>
+                    )}
                 </CommandList>
             </CommandDialog>
         </>
