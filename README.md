@@ -6,8 +6,8 @@ A job board platform built in React  with Shadcn and vite, build for efficient j
 
 ## Features
 
-- User registration and authentication.
-- Job posting and searching functionality.
+- User registration and authentication. PENDING
+- Job Searching functionality.
 - User-friendly and accessible interface.
 - Chat functionality for communication between employers and job seekers.
 - Customizable color interface for personalized user experience.
