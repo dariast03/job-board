@@ -19,9 +19,10 @@ import {
     PopoverTrigger,
 } from '@/components/ui/popover'
 import { Message } from '@/types/all'
+import { IMensaje } from '@/types/mensaje'
 
 interface ChatBottombarProps {
-    sendMessage: (newMessage: Message) => void
+    sendMessage: (newMessage: IMensaje) => void
     isMobile: boolean
 }
 
@@ -48,11 +49,12 @@ export default function ChatBottombar({
     }
 
     const handleThumbsUp = () => {
-        const newMessage: Message = {
+        const newMessage: IMensaje = {
             id: message.length + 1,
-            name: loggedInUserData.name,
-            avatar: loggedInUserData.avatar,
-            message: '👍',
+            usuario_id: 1,
+            fecha_y_hora: new Date(),
+            contenido: '👍',
+            estado: 'Enviado',
         }
         sendMessage(newMessage)
         setMessage('')
@@ -60,11 +62,12 @@ export default function ChatBottombar({
 
     const handleSend = () => {
         if (message.trim()) {
-            const newMessage: Message = {
+            const newMessage: IMensaje = {
                 id: message.length + 1,
-                name: loggedInUserData.name,
-                avatar: loggedInUserData.avatar,
-                message: message.trim(),
+                usuario_id: 1,
+                fecha_y_hora: new Date(),
+                contenido: message.trim(),
+                estado: 'Enviado',
             }
             sendMessage(newMessage)
             setMessage('')
