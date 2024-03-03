@@ -8,12 +8,21 @@ import ThemeSwitch from '../custom/theme-switch'
 const MainLayout = () => {
     return (
         <>
-            <ScrollArea className='h-screen'>
-                <header className='sticky top-0 border-gray-200 bg-white px-4 py-2.5  shadow lg:px-6'>
+            <div className='flex min-h-screen flex-col space-y-6'>
+                <header className='relative h-screen border-gray-200  px-4 py-2.5 shadow lg:px-6'>
+                    <div className='absolute inset-0 z-[-1]'>
+                        <div className='absolute inset-0 bg-black opacity-50'></div>
+                        <img
+                            className='h-full w-full object-cover'
+                            src='/img/hero.jpg'
+                            alt='Hero'
+                        />
+                    </div>
+
                     <div className='mx-auto flex max-w-screen-xl flex-wrap items-center justify-between'>
                         <Link to='/' className='flex items-center'>
                             <img
-                                src='https://th.bing.com/th/id/OIP.ewFejZYoQiJB3Z8aJ10ZHwAAAA?rs=1&pid=ImgDetMain'
+                                src='/img/logo.png'
                                 className='mr-3 h-6 sm:h-9'
                                 alt='Logo Bolsa De Trabajo'
                             />
@@ -70,10 +79,10 @@ const MainLayout = () => {
                     </div>
                 </header>
 
-                <main className='m-auto h-auto w-full max-w-7xl p-10'>
+                <main className='container m-auto h-auto w-full max-w-7xl p-10'>
                     <Outlet />
                 </main>
-            </ScrollArea>
+            </div>
         </>
     )
 }

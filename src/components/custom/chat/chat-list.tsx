@@ -34,8 +34,8 @@ export function ChatList({
     }, [messages])
 
     return (
-        <div className='flex h-full w-full flex-col overflow-y-auto overflow-x-hidden'>
-            <div className='flex h-full w-full flex-col overflow-y-auto overflow-x-hidden'>
+        <>
+            <div className='flex h-full w-full flex-col overflow-y-auto overflow-x-hidden '>
                 <ScrollArea className='h-96' ref={messagesContainerRef}>
                     <AnimatePresence>
                         {messages?.map((message, index) => (
@@ -97,6 +97,6 @@ export function ChatList({
                 </ScrollArea>
             </div>
             <ChatBottombar sendMessage={sendMessage} isMobile={isMobile} />
-        </div>
+        </>
     )
 }

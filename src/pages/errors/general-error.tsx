@@ -18,19 +18,20 @@ export default function GeneralError({
                     <h1 className='text-[7rem] font-bold leading-tight'>500</h1>
                 )}
                 <span className='font-medium'>
-                    Oops! Something went wrong {`:')`}
+                    Oops! Algo malio sal {`:')`}
                 </span>
                 <p className='text-center text-muted-foreground'>
-                    We apologize for the inconvenience. <br /> Please try again
-                    later.
+                    Pedimos disculpas por las molestias. <br /> Por favor,
+                    inténtelo de nuevo más tarde. <br />
+                    Si el error persiste contacta con un adminstrador
                 </p>
                 {!minimal && (
                     <div className='mt-6 flex gap-4'>
                         <Button variant='outline' onClick={() => navigate(-1)}>
-                            Go Back
+                            Regresar
                         </Button>
                         <Button onClick={() => navigate('/')}>
-                            Back to Home
+                            Ir al inicio
                         </Button>
                     </div>
                 )}

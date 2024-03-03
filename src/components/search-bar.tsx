@@ -12,8 +12,8 @@ import {
     CommandItem,
     CommandList,
 } from '@/components/ui/command'
-import { historialUsuario } from '@/data/historialUsuario'
-import { trabajos } from '@/data/trabajos'
+import { historialUsuario } from '@/data/historyUser'
+import { jobs } from '@/data/jobs'
 
 export function SearchBar({ ...props }: DialogProps) {
     const router = useNavigate()
@@ -95,16 +95,16 @@ export function SearchBar({ ...props }: DialogProps) {
                     </CommandGroup>
 
                     <CommandGroup heading='Busqueda'>
-                        {trabajos.map((navItem) => (
+                        {jobs.map((navItem) => (
                             <CommandItem
                                 key={navItem.id}
-                                value={navItem.descripcion_contrato}
+                                value={navItem.titulo}
                                 onSelect={() => {
                                     runCommand(() => router('/404'))
                                 }}
                             >
                                 <Search className='mr-2 h-4 w-4' />
-                                {navItem.descripcion_contrato}
+                                {navItem.titulo}
                             </CommandItem>
                         ))}
                     </CommandGroup>
