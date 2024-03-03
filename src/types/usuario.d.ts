@@ -1,4 +1,4 @@
-export type UserType = {
+export type IUsuario = {
     id: number
     nombre: string
     apellido: string

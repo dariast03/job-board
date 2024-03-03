@@ -1,4 +1,4 @@
-export type BussinesType = {
+export type IEmpresa = {
     id: number
     nombre: string
     ubicacion: string

@@ -1,4 +1,4 @@
-type JobType = {
+type ITrabajo = {
     id: number
     categoriaId: number
     salario: number
