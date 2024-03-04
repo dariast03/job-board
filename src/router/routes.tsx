@@ -3,6 +3,7 @@ import GeneralError from '../pages/errors/general-error'
 import NotFoundError from '../pages/errors/not-found-error'
 import MaintenanceError from '../pages/errors/maintenance-error'
 import Layout from '../components/layout/main-layout'
+import EmpresaChat from '@/pages/chat/empresa-chat'
 
 const routes = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const routes = createBrowserRouter([
                         }),
                     },
                 ],
+            },
+            {
+                path: '/chat/empresa',
+                element: <EmpresaChat />,
             },
             {
                 element: <Layout />,

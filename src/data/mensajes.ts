@@ -3,7 +3,8 @@ import { IMensaje } from '@/types/mensaje'
 export const mensajes: IMensaje[] = [
     {
         id: 1,
-        contenido: 'Hola, ¿cómo estás?',
+        contenido:
+            'Hola, ¿estás interesado en alguna posición en nuestra empresa?',
         fecha_y_hora: new Date(),
         estado: 'Enviado',
         usuario_id: 1,
@@ -11,7 +12,8 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 2,
-        contenido: '¡Hola! Estoy bien, ¿y tú?',
+        contenido:
+            '¡Hola! Sí, estoy buscando oportunidades laborales. ¿Tienen alguna vacante disponible?',
         fecha_y_hora: new Date(),
         estado: 'Recibido',
         usuario_id: null,
@@ -19,7 +21,7 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 3,
-        contenido: 'Buenos días, ¿qué planes tienes para hoy?',
+        contenido: 'Buenos días, ¿cuál es tu experiencia laboral?',
         fecha_y_hora: new Date(),
         estado: 'Enviado',
         usuario_id: 2,
@@ -27,7 +29,7 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 4,
-        contenido: 'Hola, tengo una reunión importante por la mañana.',
+        contenido: 'Hola, tengo experiencia en ventas y atención al cliente.',
         fecha_y_hora: new Date(),
         estado: 'Recibido',
         usuario_id: null,
@@ -35,7 +37,8 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 5,
-        contenido: '¿Qué tal si nos encontramos después de la reunión?',
+        contenido:
+            'Excelente. ¿Podrías enviarme tu currículum vitae para revisarlo?',
         fecha_y_hora: new Date(),
         estado: 'Enviado',
         usuario_id: 3,
@@ -43,7 +46,7 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 6,
-        contenido: 'Sí, me parece bien. Nos vemos entonces.',
+        contenido: 'Sí, por supuesto. Voy a enviarlo ahora mismo.',
         fecha_y_hora: new Date(),
         estado: 'Recibido',
         usuario_id: null,
@@ -51,7 +54,7 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 7,
-        contenido: '¡Hola! ¿Cómo va todo?',
+        contenido: '¡Hola! ¿Cuándo podrías venir a una entrevista presencial?',
         fecha_y_hora: new Date(),
         estado: 'Enviado',
         usuario_id: 4,
@@ -59,7 +62,8 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 8,
-        contenido: 'Hola, todo marcha bien por aquí. ¿Y contigo?',
+        contenido:
+            'Hola, estaría disponible para una entrevista la próxima semana.',
         fecha_y_hora: new Date(),
         estado: 'Recibido',
         usuario_id: null,
@@ -67,7 +71,8 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 9,
-        contenido: '¿Tienes algún plan para el fin de semana?',
+        contenido:
+            'Perfecto. Te enviaré los detalles de la entrevista por correo electrónico.',
         fecha_y_hora: new Date(),
         estado: 'Enviado',
         usuario_id: 5,
@@ -75,7 +80,7 @@ export const mensajes: IMensaje[] = [
     },
     {
         id: 10,
-        contenido: 'Sí, voy a visitar a mi familia. ¿Y tú?',
+        contenido: 'Estupendo. Estaré atento a tu mensaje. Gracias.',
         fecha_y_hora: new Date(),
         estado: 'Recibido',
         usuario_id: null,

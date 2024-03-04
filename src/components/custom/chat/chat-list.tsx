@@ -69,7 +69,7 @@ export function ChatList({
                                 )}
                             >
                                 <div className='flex items-center gap-3'>
-                                    <span className=' max-w-xs rounded-md bg-popover p-3'>
+                                    <span className=' max-w-xs rounded-md bg-gray-300 p-3'>
                                         {message.contenido}
                                     </span>
                                 </div>

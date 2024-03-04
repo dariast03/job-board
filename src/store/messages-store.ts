@@ -1,3 +1,4 @@
+import { mensajes } from '@/data/mensajes'
 import { IHistorialUsuario } from '@/types/historial-usuario'
 import { IMensaje } from '@/types/mensaje'
 import { StateCreator, create } from 'zustand'
@@ -15,7 +16,7 @@ type Actions = {
 type MessagesStore = Store & Actions
 
 const initialState: Store = {
-    messages: [],
+    messages: mensajes,
 }
 
 const storeData: StateCreator<Store & Actions> = (set) => ({

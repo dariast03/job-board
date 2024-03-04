@@ -27,7 +27,7 @@ const FloatChat = () => {
             </Button>
             <div
                 className={cn([
-                    'pointer-events-none fixed bottom-24 right-10 w-full rounded-lg border bg-primary opacity-0 shadow-2xl transition-all duration-300 ease-in-out sm:w-96',
+                    'pointer-events-none fixed bottom-24 right-10 w-full rounded-lg border bg-white opacity-0 shadow-2xl transition-all duration-300 ease-in-out sm:w-96',
                     visibleChat && 'pointer-events-auto opacity-100',
                 ])}
             >

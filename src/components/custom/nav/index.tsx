@@ -25,7 +25,7 @@ const Nav: React.FC<Props> = (props) => {
 
                 <UserNav />
 
-                <ThemeSwitch />
+                <ThemeSwitch withHero={withHero} />
             </div>
         </div>
     )

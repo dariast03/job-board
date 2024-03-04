@@ -51,7 +51,7 @@ export default function ChatBottombar({
     const handleThumbsUp = () => {
         const newMessage: IMensaje = {
             id: message.length + 1,
-            usuario_id: 1,
+            usuario_id: 2,
             fecha_y_hora: new Date(),
             contenido: '👍',
             estado: 'Enviado',
@@ -110,7 +110,7 @@ export default function ChatBottombar({
                         >
                             <PlusCircle
                                 size={20}
-                                className='text-white'
+                                className='text-muted-foreground'
                             />
                         </Link>
                     </PopoverTrigger>
@@ -130,7 +130,7 @@ export default function ChatBottombar({
                                 >
                                     <Mic
                                         size={20}
-                                        className='text-white'
+                                        className='text-muted-foreground'
                                     />
                                 </Link>
                                 {BottombarIcons.map((icon, index) => (
@@ -148,7 +148,7 @@ export default function ChatBottombar({
                                     >
                                         <icon.icon
                                             size={20}
-                                            className='text-white'
+                                            className='text-muted-foreground'
                                         />
                                     </Link>
                                 ))}
@@ -167,7 +167,7 @@ export default function ChatBottombar({
                             >
                                 <Mic
                                     size={20}
-                                    className='text-white'
+                                    className='text-muted-foreground'
                                 />
                             </Link>
                         )}
@@ -190,7 +190,7 @@ export default function ChatBottombar({
                             >
                                 <icon.icon
                                     size={20}
-                                    className='text-white'
+                                    className='text-muted-foreground'
                                 />
                             </Link>
                         ))}
@@ -205,7 +205,6 @@ export default function ChatBottombar({
                         inputRef.current.focus()
                     }
                 }}
-                
             />
 
             <AnimatePresence initial={false}>
@@ -248,7 +247,7 @@ export default function ChatBottombar({
                     >
                         <SendHorizontal
                             size={20}
-                            className='text-white'
+                            className='text-muted-foreground'
                         />
                     </Link>
                 ) : (
@@ -261,7 +260,7 @@ export default function ChatBottombar({
                         )}
                         onClick={handleThumbsUp}
                     >
-                        <ThumbsUp size={20} className='text-white' />
+                        <ThumbsUp size={20} className='text-muted-foreground' />
                     </Link>
                 )}
             </AnimatePresence>
