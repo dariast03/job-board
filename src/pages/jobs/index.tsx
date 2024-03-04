@@ -1,7 +1,7 @@
 import JobList from '@/components/custom/job/job-list'
 import { jobs } from '@/data/jobs'
 import { useMemo, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { ScrollRestoration, useSearchParams } from 'react-router-dom'
 
 const OfertasDeTrabajo = () => {
     const urlParams = new URLSearchParams(location.search)
@@ -23,6 +23,8 @@ const OfertasDeTrabajo = () => {
         })
     }, [title])
     return (
+       <>
+       <ScrollRestoration/>
         <section className='my-10 md:container md:max-w-4xl'>
             {title && (
                 <h1 className='  mb-10 text-2xl font-bold'>
@@ -36,6 +38,7 @@ const OfertasDeTrabajo = () => {
                 <p className='my-10'>No se han encontrado resultados</p>
             )}
         </section>
+       </>
     )
 }
 export default OfertasDeTrabajo

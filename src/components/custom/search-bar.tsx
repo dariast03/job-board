@@ -133,20 +133,13 @@ export function SearchBar({ ...props }: DialogProps) {
                                             onSelect={() => {
                                                 runCommand(() => router('/404'))
                                             }}
-                                            /*    className='flex  justify-between' */
+                                          
                                         >
                                             <div className='flex'>
                                                 <History className='mr-2 h-4 w-4' />
                                                 {navItem.detalle}
                                             </div>
-
-                                            {/*             <Button
-                                            variant={'ghost'}
-                                            type='button'
-                                            onClick={(e) => e.preventDefault()}
-                                        >
-                                            <X className='text-gray-400' />
-                                        </Button> */}
+                               
                                         </CommandItem>
                                     ))}
                             </CommandGroup>

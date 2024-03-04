@@ -47,6 +47,7 @@ export function Sidebar({ links, isCollapsed, isMobile }: SidebarProps) {
                                         to='#'
                                         className={cn(
                                             buttonVariants({
+                                                //@ts-expect-error
                                                 variant: link.variant,
                                                 size: 'icon',
                                             }),
@@ -83,7 +84,9 @@ export function Sidebar({ links, isCollapsed, isMobile }: SidebarProps) {
                             to='#'
                             className={cn(
                                 buttonVariants({
+                                    //@ts-expect-error
                                     variant: link.variant,
+                                    //@ts-expect-error
                                     size: 'xl',
                                 }),
                                 link.variant === 'grey' &&

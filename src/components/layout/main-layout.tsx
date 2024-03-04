@@ -36,7 +36,7 @@ const MainLayout: React.FC<Props> = (props) => {
                     {withHero && <SearchForm />}
                 </header>
 
-                <main className='container m-auto h-auto w-full max-w-7xl md:px-10'>
+                <main className='container m-auto h-auto w-full max-w-7xl py-5 md:p-10'>
                     <Outlet />
                 </main>
             </div>

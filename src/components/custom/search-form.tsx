@@ -40,9 +40,9 @@ const SearchForm = () => {
                 Encuentra el trabajo de tu sueños
             </h1>
 
-            <section className='mt-10'>
+            <section className='mt-10 mx-5 md:m-0'>
                 <form
-                    className='grid grid-cols-4 gap-4'
+                    className='grid md:grid-cols-4 gap-4'
                     onSubmit={handleSubmit(onSubmit)}
                 >
                     <div>

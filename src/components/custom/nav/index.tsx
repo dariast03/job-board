@@ -18,7 +18,9 @@ const Nav: React.FC<Props> = (props) => {
         >
             <NavHeader />
 
+            <div className='hidden md:block'>
             <NavLinks withHero={withHero} />
+            </div>
 
             <div className='flex gap-4'>
                 <SearchBar />

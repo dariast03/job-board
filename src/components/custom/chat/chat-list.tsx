@@ -29,16 +29,18 @@ export function ChatList({
             behavior: 'smooth',
         })
 
-        /*   if (messagesContainerRef.current) {
-            messagesContainerRef.current.scrollTop =
-                messagesContainerRef.current.scrollHeight
-        } */
+          if (messagesContainerRef.current) {
+            messagesContainerRef.current.scrollTo({
+               top:0,
+               behavior:"smooth" 
+            })
+        }
     }, [messages])
 
     return (
         <>
             <div className='flex h-full w-full flex-col overflow-y-auto overflow-x-hidden '>
-                <ScrollArea className='h-96' ref={messagesContainerRef}>
+                <ScrollArea className='h-96'>
                     <AnimatePresence>
                         {messages?.map((message, index) => (
                             <motion.div
@@ -69,13 +71,15 @@ export function ChatList({
                                 )}
                             >
                                 <div className='flex items-center gap-3'>
-                                    <span className=' max-w-xs rounded-md bg-gray-300 p-3'>
+                                    <span className=' max-w-xs rounded-md bg-gray-200 p-3'>
                                         {message.contenido}
                                     </span>
                                 </div>
                             </motion.div>
                         ))}
                     </AnimatePresence>
+
+                    <div ref={messagesContainerRef}></div>
                 </ScrollArea>
             </div>
             <ChatBottombar sendMessage={sendMessage} isMobile={isMobile} />
