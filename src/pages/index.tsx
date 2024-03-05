@@ -43,7 +43,7 @@ const Index = () => {
                     </section>
                 )}
 
-                <section>
+               {/*  <section>
                     <h1 className='my-10 text-center text-3xl font-bold'>
                         {lengthJobsFormat} Trabajos esperando por ti
                     </h1>
@@ -51,7 +51,7 @@ const Index = () => {
                     <Link to="/ofertas-de-trabajo" className='mt-5 flex justify-end'>
                         <Button>Ver más</Button>
                     </Link>
-                </section>
+                </section> */}
             </div>
         </>
     )

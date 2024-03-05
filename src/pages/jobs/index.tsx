@@ -25,6 +25,7 @@ const OfertasDeTrabajo = () => {
     return (
        <>
        <ScrollRestoration/>
+       
         <section className='my-10 md:container md:max-w-4xl'>
             {title && (
                 <h1 className='  mb-10 text-2xl font-bold'>

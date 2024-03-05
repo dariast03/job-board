@@ -62,16 +62,16 @@ const DetailJob = () => {
                             </h3>
                             <ul className='list-inside list-disc'>
                                 <li>
-                                    Lorem ipsum dolor, sit amet consectetur
-                                    adipisicing elit.
+                                    Diploma de bachillerato o equivalente.
                                 </li>
                                 <li>
-                                    Et corrupti impedit harum totam nostrum
-                                    aliquam optiom.
+                                    Conocimientos básicos de informática.
                                 </li>
                                 <li>
-                                    Inatus porro libero, illo quaerat, id, nisi
-                                    rem placeat officia.
+                                    Experiencia como Consultor de Marketing mínima de 2 años.
+                                </li>
+                                <li>
+                                    Experiencia en el uso de herramientas como Adobe Photoshop, Illustrator, u otros programas similares.
                                 </li>
                             </ul>
                         </div>
@@ -80,9 +80,30 @@ const DetailJob = () => {
                                 Habilidades
                             </h3>
                             <ul className='list-inside list-disc'>
-                                <li>Lorem ipsum dolor.</li>
-                                <li>Et corrupti impedit.</li>
-                                <li>Inatus porro libero.</li>
+                                <li>
+                                <span className='font-semibold'>Trabajo en Equipo: </span>
+                                Habilidad para colaborar y trabajar eficazmente con otros en proyectos y tareas.
+                                </li>
+                                <li>
+                                <span className='font-semibold'>Adaptabilidad: </span>
+                                Flexibilidad para ajustarse a cambios en el entorno laboral y asumir nuevas responsabilidades.
+                                </li>
+                                <li>
+                                <span className='font-semibold'>Organización: </span>
+                                Capacidad para planificar, establecer prioridades y gestionar el tiempo de manera eficiente.
+                                </li>
+                                <li>
+                                <span className='font-semibold'>Empatía: </span>
+                                Habilidad para comprender y relacionarse con las emociones y perspectivas de los demás.
+                                </li>
+                                <li>
+                                <span className='font-semibold'>Pensamiento crítico: </span>
+                                Habilidad para analizar información de manera objetiva y tomar decisiones fundamentadas.
+                                </li>
+                                <li>
+                                <span className='font-semibold'>Aprendizaje continuo: </span>
+                                Actitud de disposición para adquirir nuevos conocimientos, habilidades y competencias a lo largo del tiempo.
+                                </li>
                             </ul>
                         </div>
                     </div>

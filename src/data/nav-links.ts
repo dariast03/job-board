@@ -7,8 +7,8 @@ export const navLinks = [
         title: 'Ofertas de Trabajo',
         href: '/ofertas-de-trabajo',
     },
-    {
+   /*  {
         title: 'Empresas',
         href: '/404',
-    },
+    }, */
 ]

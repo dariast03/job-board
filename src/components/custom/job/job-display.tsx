@@ -23,7 +23,7 @@ const JobDisplay: React.FC<Props> = (props) => {
             className='grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-12'
         >
             <div className='col-span-2'>
-                <img className='size-10 object-contain' src={company.logo} />
+                <img className='size-20 object-contain' src={company.logo} />
             </div>
 
             <div className='col-span-5 space-y-3'>
