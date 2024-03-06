@@ -22,8 +22,9 @@ import { Message } from '@/types/all'
 import { IMensaje } from '@/types/mensaje'
 
 interface ChatBottombarProps {
-    sendMessage: (newMessage: IMensaje) => void
+    sendMessage: (newMessage: string) => void
     isMobile: boolean
+    userAuth: number
 }
 
 export const BottombarIcons = [{ icon: FileImage }, { icon: Paperclip }]
@@ -49,27 +50,27 @@ export default function ChatBottombar({
     }
 
     const handleThumbsUp = () => {
-        const newMessage: IMensaje = {
+        /*  const newMessage: IMensaje = {
             id: message.length + 1,
             usuario_id: 2,
             fecha_y_hora: new Date(),
             contenido: '👍',
             estado: 'Enviado',
-        }
-        sendMessage(newMessage)
+        } */
+        sendMessage('👍')
         setMessage('')
     }
 
     const handleSend = () => {
         if (message.trim()) {
-            const newMessage: IMensaje = {
+            /*       const newMessage: IMensaje = {
                 id: message.length + 1,
                 usuario_id: 1,
                 fecha_y_hora: new Date(),
                 contenido: message.trim(),
                 estado: 'Enviado',
-            }
-            sendMessage(newMessage)
+            } */
+            sendMessage(message.trim())
             setMessage('')
 
             if (inputRef.current) {
@@ -105,12 +106,12 @@ export default function ChatBottombar({
                                     size: 'icon',
                                 }),
                                 'h-9 w-9',
-                                'dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white'
+                                'dark:bg-card dark:text-muted-foreground  dark:hover:text-white'
                             )}
                         >
                             <PlusCircle
                                 size={20}
-                                className='text-muted-foreground'
+                                className='text-muted-foreground dark:hover:text-white'
                             />
                         </Link>
                     </PopoverTrigger>
@@ -125,12 +126,12 @@ export default function ChatBottombar({
                                             size: 'icon',
                                         }),
                                         'h-9 w-9',
-                                        'dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white'
+                                        'dark:bg-card dark:text-muted-foreground  dark:hover:text-white'
                                     )}
                                 >
                                     <Mic
                                         size={20}
-                                        className='text-muted-foreground'
+                                        className='text-muted-foreground dark:hover:text-white'
                                     />
                                 </Link>
                                 {BottombarIcons.map((icon, index) => (
@@ -143,12 +144,12 @@ export default function ChatBottombar({
                                                 size: 'icon',
                                             }),
                                             'h-9 w-9',
-                                            'dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white'
+                                            'dark:bg-card dark:text-muted-foreground dark:hover:text-white'
                                         )}
                                     >
                                         <icon.icon
                                             size={20}
-                                            className='text-muted-foreground'
+                                            className='text-muted-foreground dark:hover:text-white'
                                         />
                                     </Link>
                                 ))}
@@ -162,7 +163,7 @@ export default function ChatBottombar({
                                         size: 'icon',
                                     }),
                                     'h-9 w-9',
-                                    'dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white'
+                                    'dark:bg-card dark:text-muted-foreground dark:hover:text-white'
                                 )}
                             >
                                 <Mic
@@ -241,13 +242,13 @@ export default function ChatBottombar({
                         className={cn(
                             buttonVariants({ variant: 'ghost', size: 'icon' }),
                             'h-9 w-9',
-                            'shrink-0 dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white'
+                            'shrink-0 dark:bg-card dark:text-muted-foreground dark:hover:text-white'
                         )}
                         onClick={handleSend}
                     >
                         <SendHorizontal
                             size={20}
-                            className='text-muted-foreground'
+                            className='text-muted-foreground dark:hover:text-white'
                         />
                     </Link>
                 ) : (
@@ -256,11 +257,14 @@ export default function ChatBottombar({
                         className={cn(
                             buttonVariants({ variant: 'ghost', size: 'icon' }),
                             'h-9 w-9',
-                            'shrink-0 dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white'
+                            'shrink-0 dark:bg-card dark:text-muted-foreground  dark:hover:text-white'
                         )}
                         onClick={handleThumbsUp}
                     >
-                        <ThumbsUp size={20} className='text-muted-foreground' />
+                        <ThumbsUp
+                            size={20}
+                            className='text-muted-foreground dark:hover:text-white'
+                        />
                     </Link>
                 )}
             </AnimatePresence>

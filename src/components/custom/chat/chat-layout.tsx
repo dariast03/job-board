@@ -10,6 +10,7 @@ import { users } from '@/data/users'
 import { mensajes } from '@/data/mensajes'
 import { Sidebar } from '../sidebar'
 import { useMessagesStore } from '@/store/messages-store'
+import { IMensaje } from '@/types/mensaje'
 
 interface ChatLayoutProps {
     defaultLayout: number[] | undefined
@@ -40,7 +41,39 @@ export function ChatLayout({
         }
     }, [])
 
-    const { addMessage, messages } = useMessagesStore()
+    const { addMessage, messages, setMessages } = useMessagesStore()
+
+    const onNewMessageEmpresa = (message: string) => {
+        console.log('new message', message)
+        const newMessage: IMensaje = {
+            id: message.length + 1,
+            empresa_id: 2,
+            fecha_y_hora: new Date(),
+            contenido: message.trim(),
+            estado: 'Enviado',
+        }
+
+        addMessage(newMessage)
+    }
+
+    useEffect(() => {
+        const loadMessagesFromLocalStorage = () => {
+            const storedMessages = JSON.parse(
+                localStorage.getItem('messages-store')
+            )
+
+            if (storedMessages.state.messages.length !== messages.length)
+                setMessages(storedMessages.state.messages)
+        }
+
+        loadMessagesFromLocalStorage()
+
+        const interval = setInterval(() => {
+            loadMessagesFromLocalStorage()
+        }, 1000)
+
+        return () => clearInterval(interval)
+    }, [])
 
     return (
         <ResizablePanelGroup
@@ -94,10 +127,11 @@ export function ChatLayout({
 
             <ResizablePanel defaultSize={defaultLayout[1]} minSize={30}>
                 <Chat
-                    sendMessage={addMessage}
+                    sendMessage={onNewMessageEmpresa}
                     messages={messages}
                     selectedUser={selectedUser}
                     isMobile={isMobile}
+                    //  userAuth={1}
                 />
             </ResizablePanel>
         </ResizablePanelGroup>
