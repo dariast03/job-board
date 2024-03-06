@@ -37,6 +37,7 @@ export function Sidebar({ links, isCollapsed, isMobile }: SidebarProps) {
                     </div>
                 </div>
             )}
+
             <nav className='grid gap-1 px-2 group-[[data-collapsed=true]]:justify-center group-[[data-collapsed=true]]:px-2'>
                 {links.map((link, index) =>
                     isCollapsed ? (
@@ -56,15 +57,8 @@ export function Sidebar({ links, isCollapsed, isMobile }: SidebarProps) {
                                                 'dark:bg-muted dark:text-muted-foreground dark:hover:bg-muted dark:hover:text-white'
                                         )}
                                     >
-                                        <Avatar className='flex items-center justify-center'>
-                                            <AvatarImage
-                                                src={link.avatar}
-                                                alt={link.avatar}
-                                                width={6}
-                                                height={6}
-                                                className='h-10 w-10 '
-                                            />
-                                        </Avatar>{' '}
+                                        {link.name[0]}
+
                                         <span className='sr-only'>
                                             {link.name}
                                         </span>
