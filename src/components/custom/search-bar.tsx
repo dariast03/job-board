@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+    import { useCallback, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { DialogProps } from '@radix-ui/react-alert-dialog'
 import { Search, History, Trash } from 'lucide-react'
@@ -66,11 +66,11 @@ export function SearchBar({ ...props }: DialogProps) {
               <CommandItem
                   key={navItem.id}
                   value={navItem.titulo}
-                  onSelect={() => {
+                  onSelect={(x) => {
                       runCommand(() => {
                           addNewHistory(navItem.titulo)
                           setSearch('')
-                          router('/')
+                          router(`/ofertas-de-trabajo?titulo=${x}`)
                       })
                   }}
               >
@@ -130,8 +130,8 @@ export function SearchBar({ ...props }: DialogProps) {
                                         <CommandItem
                                             key={navItem.id}
                                             value={navItem.detalle}
-                                            onSelect={() => {
-                                                runCommand(() => router('/404'))
+                                            onSelect={(x) => {
+                                                runCommand(() => router(`/ofertas-de-trabajo?titulo=${x}`))
                                             }}
                                           
                                         >

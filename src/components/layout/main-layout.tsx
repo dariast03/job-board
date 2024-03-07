@@ -33,7 +33,7 @@ const MainLayout: React.FC<Props> = (props) => {
 
                     <Nav withHero={withHero} />
 
-                {/*     {withHero && <SearchForm />} */}
+                   {withHero && <SearchForm />}
                 </header>
 
                 <main className='container m-auto h-auto w-full max-w-7xl py-5 md:p-10'>
